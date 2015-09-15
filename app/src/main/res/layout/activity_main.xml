@@ -43,10 +43,10 @@
 
     </LinearLayout>
     <fragment
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="304dp"
+        android:layout_height="313dp"
         android:background = "#DBA901"
         android:layout_margin="20dp"
         android:id="@+id/fragment_id"
-        android:name="com.pmapps.grefragmentactivity.FragmentOne"/>
+        android:name="com.pmapps.grefragmentactivity.FragmentPicture"/>
 </LinearLayout>

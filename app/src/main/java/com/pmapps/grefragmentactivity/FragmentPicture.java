@@ -12,13 +12,13 @@ import android.widget.TextView;
 /**
  * Created by Tarzan on 8/18/2015.
  */
-public class FragmentOne extends Fragment {
+public class FragmentPicture extends Fragment {
     TextView tvDisplay;
     OnTextChangedListener onTextChangedListener;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_one_layout,container,false);
+        View view = inflater.inflate(R.layout.fragment_picture_layout,container,false);
         tvDisplay = (TextView)view.findViewById(R.id.TVDisplay);
         return view;
     }

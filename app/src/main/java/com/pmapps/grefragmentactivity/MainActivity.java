@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity implements FragmentOne.OnTextChangedListener{
+public class MainActivity extends FragmentActivity implements FragmentPicture.OnTextChangedListener{
     Button btnNext,btnPrevious;
     String TVnumber;
     Integer tvnum;
@@ -28,7 +28,7 @@ public class MainActivity extends FragmentActivity implements FragmentOne.OnText
                 }else
                 {   tvnum = tvnum + 1;
                     TVnumber = tvnum.toString();
-                    FragmentOne f1 = (FragmentOne)getSupportFragmentManager().findFragmentById(R.id.fragment_id);
+                    FragmentPicture f1 = (FragmentPicture)getSupportFragmentManager().findFragmentById(R.id.fragment_id);
                     f1.updateTVDisplay(TVnumber);
 
                 }
@@ -45,7 +45,7 @@ public class MainActivity extends FragmentActivity implements FragmentOne.OnText
                 }else
                 {   tvnum = tvnum - 1;
                     TVnumber = tvnum.toString();
-                    FragmentOne f1 = (FragmentOne)getSupportFragmentManager().findFragmentById(R.id.fragment_id);
+                    FragmentPicture f1 = (FragmentPicture)getSupportFragmentManager().findFragmentById(R.id.fragment_id);
                     f1.updateTVDisplay(TVnumber);
 
                 }
@@ -57,7 +57,7 @@ public class MainActivity extends FragmentActivity implements FragmentOne.OnText
 
     @Override
     public String GetTextFromTVDisplay() {
-        FragmentOne f1 = (FragmentOne)getSupportFragmentManager().findFragmentById(R.id.fragment_id);
+        FragmentPicture f1 = (FragmentPicture)getSupportFragmentManager().findFragmentById(R.id.fragment_id);
         return f1.GetTextFromDisplay();
     }
 }
