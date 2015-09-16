@@ -7,8 +7,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends FragmentActivity implements FragmentPicture.OnTextChangedListener{
-    Button btnNext,btnPrevious;
+public class MainActivity extends FragmentActivity implements FragmentPicture.OnTextChangedListener,FragmentWord.OnWordChangedListener,FragmentMeaning.OnMeaningChangedListener,FragmentSerialNumber.OnSerialNumberChangedListener{
+    Button btnNext,btnPrevious,btnMeaning,btnPicture;
     String TVnumber;
     Integer tvnum;
     @Override
@@ -17,6 +17,9 @@ public class MainActivity extends FragmentActivity implements FragmentPicture.On
         setContentView(R.layout.activity_main);
         btnNext = (Button)findViewById(R.id.btnNext);
         btnPrevious = (Button)findViewById(R.id.btnPrevious);
+        btnMeaning = (Button)findViewById(R.id.btnMeaning);
+        btnPicture = (Button)findViewById(R.id.btnPicture);
+
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,5 +62,24 @@ public class MainActivity extends FragmentActivity implements FragmentPicture.On
     public String GetTextFromTVDisplay() {
         FragmentPicture f1 = (FragmentPicture)getSupportFragmentManager().findFragmentById(R.id.fragment_id);
         return f1.GetTextFromDisplay();
+    }
+
+    @Override
+    public String GetTextFromTVMeaning() {
+        FragmentMeaning fm = (FragmentMeaning)getSupportFragmentManager().findFragmentById(R.id.fragment_meaning);
+        return fm.GetTextFromMeaning();
+    }
+
+    @Override
+    public String GetTextFromTVSerialNumber() {
+        FragmentSerialNumber fsn = (FragmentSerialNumber)getSupportFragmentManager().findFragmentById(R.id.fragment_serial_number);
+        return fsn.GetTextFromSerialNumber();
+    }
+
+    @Override
+    public String GetTextFromTVWord() {
+        FragmentWord fw = (FragmentWord)getSupportFragmentManager().findFragmentById(R.id.fragment_word);
+        return fw.GetTextFromWord();
+
     }
 }
